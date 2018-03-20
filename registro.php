@@ -38,8 +38,8 @@ if($existe = mysql_fetch_object($query))
 
 	//Si no existe lo inserta dentro de la base de datos (insert into base de datos) en los campos (campo1, campo2, campo 3) los valores (variable1, variable2, variable 3 etc..)
 
-	$meter = @mysql_query('INSERT INTO art (Id,Producto,Tipo,Descripcion,Unidad,img,Talla,Tela,Corte,NC)
-		values ("'.$Id.'","'.$producto.'","'.$tipo.'", "'.$Descripcion.'","'.$Unidad.'","files/'.$img.'.jpg", "'.$talla.'", "'.$tela.'" , "'.$corte.'", "'.$img.'")');
+	$meter = @mysql_query('INSERT INTO art (Id,Producto,Tipo,Descripcion,Unidad,img,Talla,Tela,Corte,NC,Cantidad,Docenas)
+		values ("'.$Id.'","'.$producto.'","'.$tipo.'", "'.$Descripcion.'","'.$Unidad.'","files/'.$img.'.jpg", "'.$talla.'", "'.$tela.'" , "'.$corte.'", "'.$img.'",0,0)');
 	if($meter)
 	{
 
@@ -47,12 +47,10 @@ if($existe = mysql_fetch_object($query))
 					echo $boton_regresar ;
 
 				}else{
-								var_dump('INSERT INTO art (Id,Producto,Tipo,Descripcion,Unidad,img,Talla,Tela,Corte,NC)
-									values ("'.$Id.'","'.$producto.'","'.$tipo.'", "'.$Descripcion.'","'.$Unidad.'","files/'.$img.'.jpg", "'.$talla.'", "'.$tela.'" , "'.$corte.'", "'.$img.'")');
-								die();
-								/*
+
+
 								echo"<div class='container-fluid'>El articulo No ha sido registrado con exito";
-								echo $boton_regresar ;*/
+								echo $boton_regresar ; 
 							}
 }
 
