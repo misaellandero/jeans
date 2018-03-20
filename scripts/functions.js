@@ -235,11 +235,10 @@ $("#ean13Message")
 		$.ajax({
 			url: './includes/process.php',
 			type: 'post',
-			data: { tag: 'getData'},
+			data: { },
 			dataType: 'json',
-			success: function (data) {
+			success:  function (data) { 
 				if (data.success) {
-					console.log(data);
 					var totalDocenas = 0.00, totalUnidades = 0;
 					$.each(data, function (index, record) {
 						if ($.isNumeric(index)) {

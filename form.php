@@ -1,10 +1,9 @@
 <?php
-require_once('funciones.php');
-conectar('localhost', 'u722193362_date','03032014','u722193362_root');
+ 
 ?>
 
 <form id="registro-producto" action="registro.php" method="POST" enctype="multipart/form-data" >
-  
+
       <label>Clave Principal</label><p>
         <input id="Id" name="Id"  type="int(11)" maxlength="13" required disabled/>
         <input id="id-hidden" name="id-hidden"  type="hidden" maxlength="13"/>
@@ -26,7 +25,7 @@ while($row=mysql_fetch_array($rec))
 ?>
 </select>
  <p>
- 
+
   <label> Tipo</label><p>
         <select  id="tipo" name="tipo" type="text" required/>
 <?php
@@ -54,7 +53,7 @@ while($row=mysql_fetch_array($rec))
 }
 ?>
 </select>
-      <p>	  
+      <p>
    <label> Talla</label><p>
         <select  id="talla"  name="talla" type="text" required/>
 <?php
@@ -88,5 +87,5 @@ while($row=mysql_fetch_array($rec))
 <label> Unidad</label><p>
         <select id="unidad-registro" name="Unidad" type="text" required/>
        <option>Docena</option>
-     
+
 </select><?php include('upload.php'); ?>

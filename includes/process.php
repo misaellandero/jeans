@@ -1,8 +1,8 @@
 <?php
-	if (isset($_POST['tag'])) {
-		try {
-			$conn = require_once 'connect.php';
+	header('Content-Type: application/json');
 
+		try {
+		 	$conn = require_once '../conexionp.php';
 			$sql = "SELECT * FROM art";
 			$result = $conn->prepare($sql) or die ($sql);
 
@@ -26,12 +26,14 @@
 					);
 				}
 
+
 				$json['success'] = true;
+
 				echo json_encode($json);
 			}
 		} catch (PDOException $e) {
 			echo 'Error: '. $e->getMessage();
 		}
-	}
+
 
 ?>
