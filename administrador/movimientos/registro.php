@@ -21,7 +21,7 @@ $tipo = $_POST["tipo-movimiento"];
 for($i = 0; $i<count($Id); $i++) {
 
 	$sql = "Insert Into hist_mov_ent_sal (codigo_id,tipo_mov,cantidad,usuario,detalles)
-		values('" . $Id[$i] . "','".$tipo."', " .$Cantidad[$i] . ",'".$usuario."',"");";
+		values('" . $Id[$i] . "','".$tipo."', " .$Cantidad[$i] . ",'".$usuario."','Sin detalles');";
 	$retval = mysql_query( $sql);
 	if (!$retval){
 		echo mysql_error();
