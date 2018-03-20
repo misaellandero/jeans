@@ -144,44 +144,36 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
 
     <title>Inventario Producto terminado </title>
     <link rel="stylesheet" type="text/css" href="styles/normalize.css">
-  <link rel="stylesheet" type="text/css" href="styles/style.css">
-  <link rel="stylesheet" type="text/css" href="styles/jquery-ui-1.10.3.custom.css">
-  <link rel="stylesheet" type="text/css" href="styles/jquery.dataTables.css">
-  <link rel="stylesheet" type="text/css" href="styles/bootstrap-responsive.css">
-  <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/jquery-ui-1.10.3.custom.css">
+	<link rel="stylesheet" type="text/css" href="styles/jquery.dataTables.css">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="styles/jquery-impromptu.css">
-  <link rel="stylesheet" type="text/css" href="css/dataTables.responsive.css">
 
-  <script src="scripts/jquery.dataTables.js"></script>
-  <script src="scripts/jquery-ui-1.10.3.custom.js"></script>
-  <script src="scripts/jquery.js"></script>
-  <script src="scripts/functions.js"></script>
-  <script src="scripts/prefixfree.min.js"></script>
-  <script src="scripts/datatables.js"></script>
-  <script src="scripts/jjquery-ui.js"></script>
-  <script src="scripts/jquery-barcode.js"></script>
+
+	<script src="scripts/jquery.dataTables.js"></script>
+	<script src="scripts/jquery-ui-1.10.3.custom.js"></script>
+	<script src="scripts/jquery.js"></script>
+	<script src="scripts/functions.js"></script>
+	<script src="scripts/prefixfree.min.js"></script>
+	<script src="scripts/datatables.js"></script>
+	<script src="scripts/jjquery-ui.js"></script>
+	<script src="scripts/jquery-barcode.js"></script>
   <script src="scripts/jquery-impromptu.js"></script>
-  <script src="scripts/dataTables.responsive.js"></script>
-  <script src="/PC/js/canvasResize/canvasResize.js"></script>
-  <script src="/PC/js/canvasResize/zepto.min.js"></script>
-  <script src="/PC/js/canvasResize/binaryajax.js"></script>
-  <script src="/PC/js/canvasResize/exif.js"></script>
+
 
 
  <link href="../css/fontello.css" rel="stylesheet">
-   <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="styles/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="./Signin Template for Bootstrap_files/ie-emulation-modes-warn"></script>
+    <script src="./Signin Template for Bootstrap_files/ie-emulation-modes-warning.js"></script>
 
 
 <link rel="stylesheet" type="text/css" href="../css/imprimir.css" media="print" />
-
-
 
 
   <!--iOS -->
