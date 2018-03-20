@@ -238,6 +238,7 @@ $("#ean13Message")
 			data: { tag: 'getData'},
 			dataType: 'json',
 			success: function (data) {
+				console.log(data);
 				if (data.success) {
 					var totalDocenas = 0.00, totalUnidades = 0;
 					$.each(data, function (index, record) {
