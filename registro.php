@@ -42,12 +42,15 @@ if($existe = mysql_fetch_object($query))
 		values ("'.$Id.'","'.$producto.'","'.$tipo.'", "'.$Descripcion.'","'.$Unidad.'","files/'.$img.'.jpg", "'.$talla.'", "'.$tela.'" , "'.$corte.'", "'.$img.'")');
 	if($meter)
 	{
-		// si el articulo se registro con exito manda el siguiente Mensaje
-	// echo"<script type=\"text/javascript\">alert('El articulo ha sido registrado con exito'); window.location='entrar.php';</script>";
-	}else{
-		// si el articulo no fue  registro con exito manda el siguiente Mensaje
-		// echo"<script type=\"text/javascript\">alert('Hubo un error en el registro'); window.location='entrar.php';</script>";
-	}
+
+					echo"<div class='container-fluid'>El articulo ha sido registrado con exito";
+					echo $boton_regresar ;
+
+				}else{
+
+								echo"<div class='container-fluid'>El articulo No ha sido registrado con exito";
+								echo $boton_regresar ;
+							}
 }
 
 if (!empty($_FILES['archivo']['tmp_name'])) {
@@ -63,6 +66,4 @@ move_uploaded_file($_FILES['archivo']['tmp_name'], "files/".$valor);
 //echo "<script>alert('El archivo ha sido cargado correctamente')</script>";
 }
 
-			echo"<div class='container-fluid'>El articulo ha sido registrado con exito";
-			echo $boton_regresar ;
 ?>
