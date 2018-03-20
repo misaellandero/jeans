@@ -550,7 +550,7 @@ window.onload=function(){startTime();}
 
 
         <table id="tm" class="table" cellspacing="0" width="100%" border="1px">
-          <thead><tr><th>Numero de Movimiento</th><th>Codigo de Barras</th><th>Movimiento</th><th>Cantidad</th><th>Usuario</th><th>Fecha</th></tr></thead>
+          <thead><tr><th>Numero de Movimiento</th><th>Codigo de Barras</th><th>Movimiento</th><th>Cantidad</th><th>Usuario</th><th>Fecha</th><th>Detalles</th></tr></thead>
           <tbody>
 
             <?php
@@ -560,7 +560,8 @@ window.onload=function(){startTime();}
 
             while ($fila = mysql_fetch_array($resultado)) {
               echo " <tr>";
-              echo "<td> $fila[id] </td><td> $fila[codigo_id]  </td> <td> $fila[tipo_mov] </td><td> $fila[cantidad] </td><td> $fila[usuario] </td><td> $fila[fecha] </td>";
+              echo "<td> $fila[id] </td><td> $fila[codigo_id]  </td> <td> $fila[tipo_mov] </td><td> $fila[cantidad] </td><td> $fila[usuario] </td><td> $fila[fecha]</td><td class='campo_actualizable'>  <textarea class='form-control campo' rows='5' > $fila[detalles] </textarea>
+                    <button data-id='$fila[id]' class='actualizar_campo btn btn-success'>Actualizar</button>  </td>";
               echo " </tr>";
             }
          ?></tbody></table>
