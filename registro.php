@@ -47,7 +47,8 @@ if($existe = mysql_fetch_object($query))
 					echo $boton_regresar ;
 
 				}else{
-
+								var_dump($meter);
+								die();
 								echo"<div class='container-fluid'>El articulo No ha sido registrado con exito";
 								echo $boton_regresar ;
 							}
