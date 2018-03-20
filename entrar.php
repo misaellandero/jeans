@@ -158,19 +158,15 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
 	<script src="scripts/functions.js"></script>
 	<script src="scripts/prefixfree.min.js"></script>
 	<script src="scripts/datatables.js"></script>
-	<script src="scripts/jjquery-ui.js"></script>
+	<script src="scripts/jquery-ui.js"></script>
 	<script src="scripts/jquery-barcode.js"></script>
   <script src="scripts/jquery-impromptu.js"></script>
 
 
 
- <link href="../css/fontello.css" rel="stylesheet">
  <link href="styles/css/bootstrap.min.css" rel="stylesheet">
 
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="./Signin Template for Bootstrap_files/ie-emulation-modes-warning.js"></script>
 
 
 <link rel="stylesheet" type="text/css" href="../css/imprimir.css" media="print" />
@@ -187,8 +183,8 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
   <script src="../js/vendor/modernizr-2.6.2.min.js"></script>
   <style type="text/css">
   .back-link a {
