@@ -47,10 +47,12 @@ if($existe = mysql_fetch_object($query))
 					echo $boton_regresar ;
 
 				}else{
-								var_dump($meter);
+								var_dump('INSERT INTO art (Id,Producto,Tipo,Descripcion,Unidad,img,Talla,Tela,Corte,NC)
+									values ("'.$Id.'","'.$producto.'","'.$tipo.'", "'.$Descripcion.'","'.$Unidad.'","files/'.$img.'.jpg", "'.$talla.'", "'.$tela.'" , "'.$corte.'", "'.$img.'")');
 								die();
+								/*
 								echo"<div class='container-fluid'>El articulo No ha sido registrado con exito";
-								echo $boton_regresar ;
+								echo $boton_regresar ;*/
 							}
 }
 
