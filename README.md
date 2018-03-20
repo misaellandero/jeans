@@ -1,0 +1,2 @@
+# jeans
+inventario de jeans
