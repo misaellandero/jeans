@@ -1,0 +1,145 @@
+
+		h1 { text-align: left; margin-top:5px; border-bottom: 1px solid black; display: block; font-size: 18px; }
+		body { background: #EEEEEE; font-family: verdana; font-size: 12px; }
+		input,select { width: 95%; }
+		table { padding: 3px; background: white; margin: auto; }
+		table th { text-align: center; padding-left: 20px; }
+		table table td { border-bottom: 1px solid #D3D3D3;}
+		input,select,textarea { border: 1px solid #D3D3D3; }
+		input:hover { background: #F9F7ED; }
+		select:hover { background: #F9F7ED; }
+		textarea:hover { background: #F9F7ED; }
+		input.disabled { background: #EEEEEE; text-align: right; }
+		#tdDetalle { border: 1px solid #D3D3D3; }
+	
+
+body {
+ 	background: rgba(204, 204, 204, 1);
+ 	font-size: 14px;
+	body { background: #EEEEEE;  font-size: 12px; }
+ }
+ #mainWrapper {
+ 	border-radius: 5px;
+ 	margin: 0 auto;
+ 	margin-top: 10px;
+ 	max-width: 1000px;
+ }
+ #titleContent {
+ 	background: rgba(0,0,0,0.7);
+ 	color: white;
+ 	font-size: 16px;
+ 	padding: 10px;
+ }
+ section article {
+ 	margin-top: 15px;
+ }
+ .barCode {
+ 	
+	height: 125px;
+	margin-bottom: 10px;
+	width: 24%;
+ }
+ .barCode header {
+ 	
+ 	height: 35px;
+ 	margin-top: -10px;
+ }
+ .barCode header h4 {
+ 	background: #F7F7F9;
+ 	line-height: 35px;
+ 	text-align: center;
+ }
+ .alert {
+ 	display: none;
+ }
+ #aRegister {
+ 	display: none;
+ }
+ #aSearch {
+ 	
+ }
+  #aDates {
+ 	display: none;
+ }
+ #aEntry {
+	 display: none;
+ }
+ #aSalida {
+	 display: none;
+ }
+ #tSearch_wrapper {
+ 	margin-bottom: 20px;
+ }
+#aSearch .row-fluid {
+	border-top: 3px dotted black;
+	display: none;
+	padding-top: 10px;
+}
+#aSearch table tr {
+	cursor: pointer;
+}
+footer {
+	background: rgba(0,0,0,0.7);
+	border-radius: 4px;
+	color: white;
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 12px;
+}
+#popup_container {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	min-width: 300px; /* Dialog will be no smaller than this */
+	max-width: 600px; /* Dialog will wrap after this width */
+	background: #FFF;
+	border: solid 5px #999;
+	color: #000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#popup_title {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.75em;
+	color: #666;
+	background: #CCC url(images/title.gif) top repeat-x;
+	border: solid 1px #FFF;
+	border-bottom: solid 1px #999;
+	cursor: default;
+	padding: 0em;
+	margin: 0em;
+}
+
+#popup_content {
+	background: 16px 16px no-repeat url(images/info.gif);
+	padding: 1em 1.75em;
+	margin: 0em;
+}
+
+#popup_content.alert {
+	background-image: url(images/info.gif);
+}
+
+#popup_content.confirm {
+	background-image: url(images/important.gif);
+}
+
+#popup_content.prompt {
+	background-image: url(images/help.gif);
+}
+
+#popup_message {
+	padding-left: 48px;
+}
+
+#popup_panel {
+	text-align: center;
+	margin: 1em 0em 0em 1em;
+}
+
+#popup_prompt {
+	margin: .5em 0em;
+}
