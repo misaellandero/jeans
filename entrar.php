@@ -168,10 +168,7 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
 
 
 
-
-<link rel="stylesheet" type="text/css" href="../css/imprimir.css" media="print" />
-
-
+ 
   <!--iOS -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="img/favicon.png">
@@ -585,8 +582,6 @@ window.onload=function(){startTime();}
   </div>
   <!-- /Demo content -->
 
-
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
 
 </body>

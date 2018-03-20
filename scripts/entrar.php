@@ -158,8 +158,7 @@ window.onload=function(){startTime();}
               <li><a href="#">Salidas</a></li>
            </ul>
        </nav>
-<header id="titleContent">Buscar Articulo</header>
-<header id="titleContent">Buscar Articulo</header>
+<header id="titleContent">Registrar Articulo</header>
 <section>
 			<article id="aRegister">
 				<div class="row-fluid">
