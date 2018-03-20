@@ -16,9 +16,31 @@ $Descripcion = strip_tags($_POST['Descripcion']);
 $talla = strip_tags($_POST['talla']);
 $tela = strip_tags($_POST['tela']);
 $Unidad = strip_tags($_POST['Unidad']);
-$img = strip_tags($_POST['nombre']);
 $corte = strip_tags($_POST['Corte']);
 $boton_regresar = '<br><a role="button" href="entrar.php" class="btn btn-primary">Regresar</a></div>';
+
+
+$img = strip_tags($_POST['nombre']);
+
+if (isset($_POST['id-rollo-hidden'])) {
+	$idsRollos = $_POST['id-rollo-hidden'];
+	$metrosRollos = $_POST['metros-rollo'];
+}
+
+if (!empty($_FILES['archivo']['tmp_name'])) {
+//Extrae el nombre asignado
+$nom = $_POST['nombre'];
+$archivo=$_FILES['archivo']['name'];
+$extension = explode(".",$archivo);
+$ext = $extension[1];//AQUI LA EXTENSION
+$valor = $nom.'.'.$ext;
+// el archivo es guardado en la  carpeta
+move_uploaded_file($_FILES['archivo']['tmp_name'], "files/".$valor);
+// Mensaje de confirmación, no mostrado por entrar en conflico con el codigo del form
+//echo "<script>alert('El archivo ha sido cargado correctamente')</script>";
+}
+
+
 
 // selecciona la base de datos y consulta el ID o cable principal (codigo de barras)
 
@@ -39,7 +61,7 @@ if($existe = mysql_fetch_object($query))
 	//Si no existe lo inserta dentro de la base de datos (insert into base de datos) en los campos (campo1, campo2, campo 3) los valores (variable1, variable2, variable 3 etc..)
 
 	$meter = @mysql_query('INSERT INTO art (Id,Producto,Tipo,Descripcion,Unidad,img,Talla,Tela,Corte,NC,Cantidad,Docenas)
-		values ("'.$Id.'","'.$producto.'","'.$tipo.'", "'.$Descripcion.'","'.$Unidad.'","files/'.$img.'.jpg", "'.$talla.'", "'.$tela.'" , "'.$corte.'", "'.$img.'",0,0)');
+		values ("'.$Id.'","'.$producto.'","'.$tipo.'", "'.$Descripcion.'","'.$Unidad.'","files/'.$valor.'", "'.$talla.'", "'.$tela.'" , "'.$corte.'", "'.$img.'",0,0)');
 	if($meter)
 	{
 
@@ -50,21 +72,10 @@ if($existe = mysql_fetch_object($query))
 
 
 								echo"<div class='container-fluid'>El articulo No ha sido registrado con exito";
-								echo $boton_regresar ; 
+								echo $boton_regresar ;
 							}
 }
 
-if (!empty($_FILES['archivo']['tmp_name'])) {
-//Extrae el nombre asignado
-$nom = $_POST['nombre'];
-$archivo=$_FILES['archivo']['name'];
-$extension = explode(".",$archivo);
-$ext = $extension[1];//AQUI LA EXTENSION
-$valor = $nom.'.'.$ext;
-// el archivo es guardado en la  carpeta
-move_uploaded_file($_FILES['archivo']['tmp_name'], "files/".$valor);
-// Mensaje de confirmación, no mostrado por entrar en conflico con el codigo del form
-//echo "<script>alert('El archivo ha sido cargado correctamente')</script>";
-}
+
 
 ?>
