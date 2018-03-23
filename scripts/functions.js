@@ -411,7 +411,7 @@ $("#cambiar").click(function(){
 		cod.find("#corte-imprimir").remove();
 		cod.find("#img_destino_articulo_imprimir").remove();
 
-		w.document.write("<table style='text-align:center;margin-top:-50px'><tr><td style='overflow:hidden;white-space:nowrap'>"+ "<h4>"+producto.html()+ "<br>" + tipo.html() + "<br>" + tela.html() + "<br>" + descripcion.html()+" TALLA:" + talla.html()+ "<br>"+ "Corte:" + corte.html() +". #:" + NC.html() +"<div style='margin-left:45'>" +"</h4>"+ codigoB.html() + "</div><select style='width:150px;'><option>DOCENA</option><option>UNIDAD</option></select><p> www.TynnosJeans.com </td></tr></table>");
+		w.document.write("<table style='text-align:center;margin-top:-50px'><tr><td style='overflow:hidden;white-space:nowrap'>"+ "<h4>"+producto.html()+ "<br>" + tipo.html() + "<br>" + tela.html() + "<br>" + descripcion.html()+" TALLA:" + talla.html()+ "<br>"+ "Corte:" + corte.html() +". #:" + NC.html() +"<div style='margin-left:45'>" +"</h4>"+ codigoB.html() + "</div><select style='width:150px;'><option>DOCENA</option><option>UNIDAD</option></select><p> www.ceyeme.mx </td></tr></table>");
 		w.document.write("<div><input type='button' value='Imprimir' class='btn btn-success' onclick='window.print();'></div>");
 
 	});
