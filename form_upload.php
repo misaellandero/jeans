@@ -87,7 +87,7 @@
 
 
 		}
-			$sql = "INSERT INTO `modelo_de` (`titulo`, `texto`,`img`,`id_modelo`) VALUES ('$titulo_img','$texto_img','$nuevonombre','$id_modelo')";
+			$sql = "INSERT INTO `modelo_de` (`titulo`, `codigo`,`texto`,`img`,`id_modelo`) VALUES ('$titulo_img','$texto_img','$nuevonombre','$id_modelo')";
 
 	    $conn->query($sql);
 
