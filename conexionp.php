@@ -1,5 +1,5 @@
 <?php
-$host= "sql132.main-hosting.eu";
+$host= "localhost";
 $user = "u315449203_sis";
 $pw = "CornComputerInc1*";
 $db = "u315449203_sis";
