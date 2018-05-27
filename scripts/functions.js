@@ -270,11 +270,8 @@ $("#ean13Message")
 
 
 	var table = $('table').dataTable({
-			"bJQueryUI" : true,
-			"bRetrieve" : true,
 			"iDisplayLength": 20,
-			"dom": 'T<"clear">lfrtip',
- "aaSorting": [[ 5, "desc" ]]
+			"responsive": true
 		})
 
 
@@ -290,16 +287,14 @@ $("#ean13Message")
 
 		$("#suma-busqueda-stock").html('Totales: ' + totalDocenas.toFixed(2) + ' Docenas || ' + totalUnidades + ' Unidades');
 	});
-				$("	#tSearch > tbody")
-					.on( 'mouseover', 'tr', function () {
-			            $(this).attr('style' , 'background-color: whitesmoke');
-			        } )
-			        .on( 'mouseleave','tr', function () {
-			            $(this).attr('style' , '');
-			        } );
+
 
 				$("#tSearch > tbody").on('click','tr',function(){
+					$('#ventana_datos_producto').modal('show');
+
+
 					var tr = $(this);
+
 
 					var nombreArchivo = tr.find("td:eq(9)").html();
 					nombreArchivo = nombreArchivo.substr(nombreArchivo.indexOf('/') + 1);
@@ -310,6 +305,10 @@ $("#ean13Message")
 					$("#id-art-update-image").val(tr.find("td:eq(0)").html());
 
 					$('#aSearch .row-fluid').show();
+
+					var id_modelo = tr.find("td:eq(0)").text();
+					parseInt(id_modelo);
+					$('#id_modelo').val(id_modelo);
 
 					$("#img_destino_articulo_imprimir").attr("src","" + tr.find("td:eq(9)").html()).error(function() {
     					$(this).attr("src","images/ind.jpg");
@@ -598,6 +597,122 @@ $("#searchBarcode").barcode(MYVALOR, "ean13",{barWidth:1, barHeight:50, output: 
     var id = $(this).data('id');
     actualizarCampo('hist_mov_ent_sal','detalles',id,valor);
   });
+
+	$(function() {
+    var myDropzone = new Dropzone("#upload_fotos");
+    myDropzone.on("complete", function(file) {
+    myDropzone.removeFile(file);
+    });
+
+    myDropzone.on("success", function(){
+
+      alert('Se Agrego con Exito la foto' );
+         //CrearTablaModelos();
+         $('#tit_notas').val('');
+         $('#text_notas').val('');
+         $('#titulo_img').val('');
+         $('#texto_img').val('');
+
+    });
+
+    myDropzone.on("error", function(){
+			alert('No se pudo agregar la foto' );
+   });
+
+
+})
+
+$('#tit_notas').on('keyup', function () {
+  var titulo = $(this).val();
+  $('#titulo_img').val(titulo);
+});
+
+$('#text_notas').on('keyup', function () {
+    var texto = $(this).val();
+    $('#texto_img').val(texto);
+});
+
+
+function CargarImagenes(div_td,id_modelo) {
+
+	$.get('includes/consulta_modelo_img.php',
+													 {id_modelo:id_modelo},
+													 function(respuesta) {
+
+																var caption = "";
+														 if (respuesta == 1) {
+															 caption = '<p> No hay imagenes registradas </p>';
+														 } else {
+
+															 $.each(respuesta, function (index, record) {
+
+																		 if ($.isNumeric(index)) {
+
+																			var re_sincronizar = '<button data-img="'+record.img+'" class="re_sincronizar btn btn-round btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Subir la Imagen al servidor online"><i class="fa fa-upload"></i> Subir</button>';
+																			var descargar = '<button data-img="'+record.img+'" class="descargar btn btn-round btn-sm btn-info"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar la Imagen desde el servidor online"><i class="fa fa-download"></i> Descargar</button>';
+																			var boton_borrar = '<button data-id="'+record.id+'" class="boton_borrar_img btn btn-round btn-sm btn-danger"><i class="fa fa-trash"></i> Borrar</button>';
+																			var zoom2 = '<button data-img="'+record.img+'"  data-toggle="modal" data-target="#zoom_modelo" class="boton_zoom_img2 btn btn-round btn-sm btn-dark" ><i class="fa fa-search"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver Imagen en Grande"></i> Zoom</button>';
+																			var zoom = '<button data-img="'+record.img+'"  data-id="'+id_modelo+'" data-toggle="modal" data-target="#zoom_modelos" class="boton_zoom_img btn btn-round btn-sm btn-info" ><i class="fa fa-search"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver Imagenes"></i> Carousel</button>';
+																			var save = '<button data-img="'+record.img+'" data-toggle="tooltip" data-placement="top" title="" data-original-title="Guardar imagen en tu ordenador" data-img="'+record.img+'"  class="boton_save_img btn btn-round btn-sm btn-primary" ><i class="fa fa-save"></i> Guardar</button>';
+
+																			caption += '<div class="col-md-6 well"> <h5>'+record.titulo+'</h5><img class="img-rounded img-responsive" width="15%"  src="files/fotos_modelos/'+record.img+'" alt="'+record.texto+'"> <p>'+record.descripcion+'</p>'+boton_borrar+re_sincronizar+save+' </div>';
+																		}
+																 })
+
+														 }
+															$(div_td).html(caption);
+
+													 });
+
+}
+
+
+$('#cargar_imagenes').on('click', function () {
+
+	var id_modelo =  $('#id_modelo').val();
+	CargarImagenes('#contenedor_imagenes',id_modelo);
+
+});
+
+$('#contenedor_imagenes').on('click','.re_sincronizar', function () {
+  var img = $(this).data('img');
+  $.get('includes/sincronizar_archivo.php',
+                       {
+                         img:img
+                       },
+                       function(jsoncuenta) {
+
+													alert('Proceso concluido');
+
+        });
+});
+
+$('#contenedor_imagenes').on('click','.boton_borrar_img', function () {
+
+  var id_img =  $(this).data('id');
+  $.get('includes/borrar_imagen.php',
+
+                       {
+                         id_img :id_img
+                       },
+
+                       function(jsoncuenta) {
+                         if(jsoncuenta == 1){
+
+
+                           alert('Imagen Borrada');
+
+                          //  CrearTablaModelos();
+
+
+
+                         }else{
+                            alert('Error en los datos')
+                         }
+
+        });
+
+});
 
 
 })
