@@ -237,8 +237,7 @@ mysql_free_result($consulta_usuario);
 
     </ul>
     <form class="form-inline my-2 my-lg-0">
-
-      <a href="<?php echo $logoutAction ?>"><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+       <a href="<?php echo $logoutAction ?>"><button class="btn btn-outline-danger my-2 my-sm-0">
          Salir</button>  </a>
     </form>
   </div>
@@ -419,19 +418,19 @@ mysql_free_result($consulta_usuario);
                       </form>
 
                       <h4>Imagenes Extra</h4>
-                      <button id="cargar_imagenes" name="cargar" class="btn btn-outline-info">Mostrar imagenes</button>
+                      <div class="form-control">
+                        <button id="cargar_imagenes" name="cargar" class="btn btn-outline-info">Mostrar imagenes</button>
+                        <div id="contenedor_imagenes" class="col-md-12">
 
-                      <div id="contenedor_imagenes" class="col-md-12">
-
+                        </div>
                       </div>
+
                 </div>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-            <button type="submit" id="cargar" name="cargar" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
               </form>
           </div>
         </div>

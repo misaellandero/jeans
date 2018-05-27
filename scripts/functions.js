@@ -655,7 +655,7 @@ function CargarImagenes(div_td,id_modelo) {
 																			var zoom = '<button data-img="'+record.img+'"  data-id="'+id_modelo+'" data-toggle="modal" data-target="#zoom_modelos" class="boton_zoom_img btn btn-round btn-sm btn-info" ><i class="fa fa-search"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver Imagenes"></i> Carousel</button>';
 																			var save = '<button data-img="'+record.img+'" data-toggle="tooltip" data-placement="top" title="" data-original-title="Guardar imagen en tu ordenador" data-img="'+record.img+'"  class="boton_save_img btn btn-round btn-sm btn-primary" ><i class="fa fa-save"></i> Guardar</button>';
 
-																			caption += '<div class="col-md-6 well"> <h5>'+record.titulo+'</h5><img class="img-rounded img-responsive" width="15%"  src="files/fotos_modelos/'+record.img+'" alt="'+record.texto+'"> <p>'+record.descripcion+'</p>'+boton_borrar+re_sincronizar+save+' </div>';
+																			caption += '<div class="col-md-6"> <h5>'+record.titulo+'</h5><img class="img-rounded img-responsive" width="15%"  src="files/fotos_modelos/'+record.img+'" alt="'+record.texto+'"> <p>'+record.texto+'</p>'+boton_borrar+re_sincronizar+save+' </div>';
 																		}
 																 })
 
